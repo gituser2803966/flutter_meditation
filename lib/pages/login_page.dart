@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:meditations/application/authentication/auth_events.dart';
-import 'package:meditations/components/login_button.dart';
 import 'package:meditations/utils/themes.dart';
 
 import '../application/authentication/auth_state_controller.dart';
@@ -141,7 +140,7 @@ class LoginPage extends HookConsumerWidget {
                                       child: Align(
                                         alignment: Alignment.center,
                                         child: Text(
-                                          'Welcome Back!',
+                                          'Login to started',
                                           style:
                                               MyThemes.bold(size.height * 0.035)
                                                   .copyWith(
@@ -149,43 +148,43 @@ class LoginPage extends HookConsumerWidget {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(
-                                      height: size.height * 0.03,
-                                    ),
-                                    LoginButton(
-                                        buttonWidth: size.width,
-                                        buttonHeight: size.height * 0.07,
-                                        borderColor: kFbBackgroundColor,
-                                        imagePath: 'assets/images/fb_logo.svg',
-                                        imageWidth: size.width * 0.07,
-                                        imageHeight: size.height * 0.03,
-                                        text: 'CONTINUE WITH FACEBOOK',
-                                        textColor: kColorLightGrey,
-                                        fontSize: size.height * 0.017,
-                                        bgColor: kFbBackgroundColor),
-                                    SizedBox(
-                                      height: size.height * 0.015,
-                                    ),
-                                    LoginButton(
-                                      buttonWidth: size.width,
-                                      buttonHeight: size.height * 0.07,
-                                      borderColor: kColorGrey,
-                                      imagePath:
-                                          'assets/images/google_logo.svg',
-                                      imageWidth: size.width * 0.07,
-                                      imageHeight: size.height * 0.03,
-                                      text: 'CONTINUE WITH GOOGLE',
-                                      textColor: kColorDarkGrey,
-                                      fontSize: size.height * 0.017,
-                                      bgColor: kColorLight,
-                                    ),
-                                    SizedBox(
-                                      height: size.height * 0.04,
-                                    ),
-                                    Text('OR LOG IN WITH EMAIL',
-                                        style:
-                                            MyThemes.medium(size.height * 0.015)
-                                                .copyWith(color: kColorGrey)),
+                                    // SizedBox(
+                                    //   height: size.height * 0.03,
+                                    // ),
+                                    // LoginButton(
+                                    //     buttonWidth: size.width,
+                                    //     buttonHeight: size.height * 0.07,
+                                    //     borderColor: kFbBackgroundColor,
+                                    //     imagePath: 'assets/images/fb_logo.svg',
+                                    //     imageWidth: size.width * 0.07,
+                                    //     imageHeight: size.height * 0.03,
+                                    //     text: 'CONTINUE WITH FACEBOOK',
+                                    //     textColor: kColorLightGrey,
+                                    //     fontSize: size.height * 0.017,
+                                    //     bgColor: kFbBackgroundColor),
+                                    // SizedBox(
+                                    //   height: size.height * 0.015,
+                                    // ),
+                                    // LoginButton(
+                                    //   buttonWidth: size.width,
+                                    //   buttonHeight: size.height * 0.07,
+                                    //   borderColor: kColorGrey,
+                                    //   imagePath:
+                                    //       'assets/images/google_logo.svg',
+                                    //   imageWidth: size.width * 0.07,
+                                    //   imageHeight: size.height * 0.03,
+                                    //   text: 'CONTINUE WITH GOOGLE',
+                                    //   textColor: kColorDarkGrey,
+                                    //   fontSize: size.height * 0.017,
+                                    //   bgColor: kColorLight,
+                                    // ),
+                                    // SizedBox(
+                                    //   height: size.height * 0.04,
+                                    // ),
+                                    // Text('OR LOG IN WITH EMAIL',
+                                    //     style:
+                                    //         MyThemes.medium(size.height * 0.015)
+                                    //             .copyWith(color: kColorGrey)),
                                     SizedBox(
                                       height: size.height * 0.04,
                                     ),
@@ -205,7 +204,7 @@ class LoginPage extends HookConsumerWidget {
                                                     empty: (value) =>
                                                         "email cannot be empty",
                                                     invalidEmail: (value) =>
-                                                        "invalid email",
+                                                        "invalid email $value",
                                                     orElse: () => null,
                                                   ),
                                               (r) => null),
